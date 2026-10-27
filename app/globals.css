@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default dark mode theme values (if no class yet) */
+  --bg-primary: #0b0d0e;
+  --bg-secondary: #121619;
+  --bg-tertiary: #181d22;
+  --bg-elevated: rgba(18, 22, 25, 0.85);
+  --text-primary: #f0f6fc;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-inverse: #0b0d0e;
+  --accent: #4ade80;
+  --accent-hover: #86efac;
+  --accent-muted: rgba(74, 222, 128, 0.14);
+  --accent-subtle: rgba(74, 222, 128, 0.06);
+  --accent-glow: rgba(74, 222, 128, 0.25);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(74, 222, 128, 0.35);
+  --grid-color: rgba(255, 255, 255, 0.025);
+}
+
+.light {
+  /* Warm paper light theme */
+  --bg-primary: #f6f4ee;
+  --bg-secondary: #ede9df;
+  --bg-tertiary: #e3ddcf;
+  --bg-elevated: rgba(255, 255, 255, 0.88);
+  --text-primary: #14191e;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-inverse: #f6f4ee;
+  --accent: #15803d;
+  --accent-hover: #166534;
+  --accent-muted: rgba(21, 128, 61, 0.12);
+  --accent-subtle: rgba(21, 128, 61, 0.05);
+  --accent-glow: rgba(21, 128, 61, 0.18);
+  --border-subtle: rgba(20, 25, 30, 0.09);
+  --border-strong: rgba(20, 25, 30, 0.18);
+  --border-accent: rgba(21, 128, 61, 0.35);
+  --grid-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark {
+  --bg-primary: #0b0d0e;
+  --bg-secondary: #121619;
+  --bg-tertiary: #181d22;
+  --bg-elevated: rgba(18, 22, 25, 0.85);
+  --text-primary: #f0f6fc;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-inverse: #0b0d0e;
+  --accent: #4ade80;
+  --accent-hover: #86efac;
+  --accent-muted: rgba(74, 222, 128, 0.14);
+  --accent-subtle: rgba(74, 222, 128, 0.06);
+  --accent-glow: rgba(74, 222, 128, 0.25);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(74, 222, 128, 0.35);
+  --grid-color: rgba(255, 255, 255, 0.025);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--text-inverse);
+}
+
+/* Accessibility Focus Visible */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Terminal Glassmorphism */
+.glass-panel {
+  background-color: var(--bg-elevated);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Monospace prompt utility */
+.font-terminal {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Blinking terminal cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.15em;
+  background-color: var(--accent);
+  vertical-align: -0.15em;
+  margin-left: 0.15em;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
