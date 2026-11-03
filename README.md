@@ -16,7 +16,7 @@
 - **Theming:** `next-themes` (Dark near-black default `#0b0d0e`, Warm paper light `#f6f4ee`, zero flash of unstyled theme)
 - **Interactive UI:** Command palette (`Ctrl/Cmd + K`), cursor-following card glow, skippable typing terminal hero, interactive 7-phase RHEL deployment roadmap
 - **Contact Dispatch:** Next.js Route Handler `app/api/contact/route.ts` with Zod validation, honeypot spam protection, in-memory rate limiting, and **Resend** email transmission
-- **CI/CD:** GitHub Actions workflow running ESLint, TypeScript compilation check, and Next.js production build
+- **CI/CD:** GitHub Actions validates pushes to `development` and pull requests to `main`; successful pushes to `development` automatically open or reuse a pull request to `main` for review
 
 ---
 
